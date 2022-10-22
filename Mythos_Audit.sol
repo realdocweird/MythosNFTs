@@ -62,6 +62,7 @@ contract Mythos is ERC721, ERC721Enumerable, Pausable, Ownable {
     }
 
     function changeAcceptedPayment(address _newToken) external onlyOwner {
+        require(_newToken != address(0));
         acceptedPayment = IERC20(_newToken);
     }
 
